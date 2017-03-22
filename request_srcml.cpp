@@ -1,6 +1,5 @@
 /*
   @file request_srcml.cpp
-
   Implementation of request_srcml()
 */
 
@@ -10,8 +9,9 @@
 // extracts the filename to use from the request
 std::string request_filename(const srcml_request& request) {
 
-    // TODO: determine the proper filename from the request
     std::string filename;
+
+    filename = request.option_filename;
 
     return filename;
 }

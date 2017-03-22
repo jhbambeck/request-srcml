@@ -1,6 +1,5 @@
 /*
   @file get_language_from_filename.cpp
-
   Implementation of get_language_from_filename()
 */
 

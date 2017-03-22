@@ -1,6 +1,5 @@
 /*
   @file get_language_from_filename.hpp
-
   Declaration of get_language_from_filename()
 */
 

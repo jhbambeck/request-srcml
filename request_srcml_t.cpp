@@ -1,6 +1,5 @@
 /*
   @file request_srcml_t.cpp
-
   Test program for request_srcml()
 */
 
@@ -13,6 +12,13 @@ int main() {
     {
     	srcml_request request = { "", "", "", ""};
     	assert(request_filename(request) == "");
+    	assert(request_language(request, "") == "");
+    }
+
+    //request_filename works if option_filename provided
+    {
+        srcml_request request = { "file.cpp", "", "", ""};
+    	assert(request_filename(request) == "file.cpp");
     	assert(request_language(request, "") == "");
     }
 
