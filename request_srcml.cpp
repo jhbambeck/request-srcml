@@ -64,5 +64,10 @@ bool generate_srcml(const srcml_request& request) {
         return true;
     }
 
+    else
+    {
+        return false;
+    }
+
 	// srcML generation code that is not available yet
 }

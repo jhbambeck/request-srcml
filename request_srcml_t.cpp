@@ -65,5 +65,11 @@ int main() {
         assert(generate_srcml(request) == true);
     }
 
+    //generate_srcml returns false if language cannot be determined
+    {
+        srcml_request request = {"", "-", "data", ""};
+        assert(generate_srcml(request) == false);
+    }
+
     return 0;
 }
