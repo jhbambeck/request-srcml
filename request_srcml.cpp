@@ -32,8 +32,14 @@ std::string request_filename(const srcml_request& request) {
 std::string request_language(const srcml_request& request, const std::string& filename) {
 
     std::string language;
-
-    language = request.option_language;
+    if(request.option_language != "")
+    {
+        language = request.option_language;
+    }
+    else
+    {
+        language = get_language_from_filename(filename);
+    }
 
     return language;
 }

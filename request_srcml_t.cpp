@@ -43,8 +43,14 @@ int main() {
 
     //request_language returns option_language
     {
-        srcml_request request = {"option.file", "local.fie", "data", "option_language"};
+        srcml_request request = {"option.file", "local.file", "data", "option_language"};
         assert(request_language(request, request_filename(request)) == "option_language");
+    }
+
+    //request_language gets lang from get_language_from_filename if no option_filename
+    {
+        srcml_request request = {"option.cpp", "local.file", "data", ""};
+        assert(request_language(request, request_filename(request)) == "C++");
     }
 
     return 0;
