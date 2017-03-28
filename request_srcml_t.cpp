@@ -35,6 +35,17 @@ int main() {
         assert(request_filename(request) == "local.file");
     }
 
+    //request_filename returns option_filename if all three provided
+    {
+        srcml_request request = {"option.file", "local.fie", "data", ""};
+        assert(request_filename(request) == "option.file");
+    }
+
+    //request_language returns option_language
+    {
+        srcml_request request = {"option.file", "local.fie", "data", "option_language"};
+        assert(request_language(request, request_filename(request)) == "option_language");
+    }
 
     return 0;
 }
