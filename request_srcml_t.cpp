@@ -74,5 +74,12 @@ int main() {
         assert(generate_srcml(request) == false);
     }
 
+    //prints error message if stdin used and extension not supported
+    {
+        srcml_request request = {"", "-", "data", ""};
+        std::cout << "Stdin extension error (test): ";
+        assert(generate_srcml(request) == false);
+    }
+
     return 0;
 }

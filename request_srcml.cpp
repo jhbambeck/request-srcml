@@ -67,7 +67,14 @@ bool generate_srcml(const srcml_request& request) {
 
     else
     {
-        std::cerr << "Extension not supported" << std::endl;
+        if(request.local_filename == "-")
+        {
+            std::cerr << "Using stdin requires a declared language" << std::endl;
+        }
+        else
+        {
+            std::cerr << "Extension not supported" << std::endl;
+        }
         return false;
     }
 
