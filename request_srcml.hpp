@@ -21,4 +21,7 @@ std::string request_filename(const srcml_request& request);
 // extracts the language to use from the request, and the filename
 std::string request_language(const srcml_request& request, const std::string& filename);
 
+//generates srcml based on the request
+bool generate_srcml(const srcml_request& request);
+
 #endif

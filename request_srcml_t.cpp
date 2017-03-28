@@ -59,5 +59,11 @@ int main() {
         assert(request_filename(request) == "");
     }
 
+    //generate_srcml returns true for valid request
+    {
+        srcml_request request = {"option.cpp", "local.file", "data", ""};
+        assert(generate_srcml(request) == true);
+    }
+
     return 0;
 }
