@@ -53,5 +53,11 @@ int main() {
         assert(request_language(request, request_filename(request)) == "C++");
     }
 
+    //local_filename is from stdin, entry_filename is "data", no option_filename
+    {
+        srcml_request request = {"", "-", "data", ""};
+        assert(request_filename(request) == "");
+    }
+
     return 0;
 }
