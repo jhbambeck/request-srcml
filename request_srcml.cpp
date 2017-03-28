@@ -10,8 +10,14 @@
 std::string request_filename(const srcml_request& request) {
 
     std::string filename;
-
-    filename = request.option_filename;
+    if(request.option_filename != "")//if there's an option_filename use it
+    {
+        filename = request.option_filename;
+    }
+    else
+    {
+        filename = request.entry_filename;
+    }
 
     return filename;
 }

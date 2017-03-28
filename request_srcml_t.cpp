@@ -19,7 +19,12 @@ int main() {
     {
         srcml_request request = { "file.cpp", "", "", ""};
     	assert(request_filename(request) == "file.cpp");
-    	assert(request_language(request, "") == "");
+    }
+
+    //request_filename returns entry_filename if no option_filename
+    {
+        srcml_request request = { "", "", "entry.file", ""};
+        assert(request_filename(request) == "entry.file");
     }
 
     return 0;
