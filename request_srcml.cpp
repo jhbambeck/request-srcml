@@ -3,6 +3,7 @@
   Implementation of request_srcml()
 */
 
+#include <iostream>
 #include "request_srcml.hpp"
 #include "get_language_from_filename.hpp"
 
@@ -66,6 +67,7 @@ bool generate_srcml(const srcml_request& request) {
 
     else
     {
+        std::cerr << "Extension not supported" << std::endl;
         return false;
     }
 

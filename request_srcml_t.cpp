@@ -5,6 +5,7 @@
 
 #include "request_srcml.hpp"
 #include <cassert>
+#include <iostream>
 
 int main() {
 
@@ -66,8 +67,10 @@ int main() {
     }
 
     //generate_srcml returns false if language cannot be determined
+    //prints error message if extension not supported
     {
-        srcml_request request = {"", "-", "data", ""};
+        srcml_request request = {"", "", "data", ""};
+        std::cout << "Extension error (test): ";
         assert(generate_srcml(request) == false);
     }
 
