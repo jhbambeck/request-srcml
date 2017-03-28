@@ -15,6 +15,8 @@ int main() {
     	assert(request_language(request, "") == "");
     }
 
+    //request_filename
+
     //request_filename works if option_filename provided
     {
         srcml_request request = { "file.cpp", "", "", ""};
@@ -26,6 +28,13 @@ int main() {
         srcml_request request = { "", "", "entry.file", ""};
         assert(request_filename(request) == "entry.file");
     }
+
+    //request_filename returns local_filename if entry_filename is "data"
+    {
+        srcml_request request = { "", "local.file", "data", ""};
+        assert(request_filename(request) == "local.file");
+    }
+
 
     return 0;
 }
