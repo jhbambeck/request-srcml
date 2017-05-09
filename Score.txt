@@ -1,0 +1,16 @@
+Score: 94
+
+* Way too many conditions -3
+* Why a blank line before the else part?
+* Comments at the end of a line that wrap should be on the line before
+* "return true;" in then part of if statement: Why not negate the condition? -3
+
+Build and test results:
+g++ -c request_srcml_t.cpp
+g++ request_srcml_t.o request_srcml.o get_language_from_filename.o -o request_srcml_t
+./get_language_from_filename_t
+./request_srcml_t
+
+My request_srcml_t.cpp file used for testing your code, along with several implementations of request_filename() and request_language(), can be found at:
+
+	https://gist.github.com/mlcollard/7e499f064a3b4d637b5369fae08cb201
